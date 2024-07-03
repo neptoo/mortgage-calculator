@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import SliderSelect from "./components/SliderSelect";
+import TenureSelect from "./components/TenureSelect";
+import Result from "./components/Result";
+import { Container, Grid } from "@mui/material";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Container maxWidth="xl" sx={{ mt: 4 }}>
+        <Grid container spacing={5}>
+          <Grid item md={6} xs={12}>
+            <SliderSelect />
+            <TenureSelect />
+          </Grid>
+          <Grid item md={6} xs={12}>
+            <Result />
+          </Grid>
+        </Grid>
+      </Container>
     </div>
   );
 }
