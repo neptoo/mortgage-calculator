@@ -10,7 +10,7 @@ function App() {
     homeValue: 3000,
     downPayment: 3000 * 0.2,
     loanAmount: 3000 * 0.8,
-    loanTerm: 3000,
+    loanTerm: 5,
     interestRate: 5,
   });
 
@@ -18,13 +18,13 @@ function App() {
     <div className="App">
       <Navbar />
       <Container maxWidth="lg" sx={{ mt: 2 }}>
-        <Grid container spacing={5}>
+        <Grid container spacing={5} alignItems="center">
           <Grid item md={6} xs={12}>
             <SliderSelect data={data} setData={setData} />
-            <TenureSelect />
+            <TenureSelect data={data} setData={setData} />
           </Grid>
           <Grid item md={6} xs={12}>
-            <Result />
+            <Result data={data} />
           </Grid>
         </Grid>
       </Container>

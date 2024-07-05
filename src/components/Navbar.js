@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div>
       <AppBar position="static">
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Toolbar>
             <Typography variant="h5" component="p">
               贷款计算器
