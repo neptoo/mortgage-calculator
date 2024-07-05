@@ -14,8 +14,8 @@ const SliderItem = ({
   unit,
 }) => {
   return (
-    <Stack my={1.4}>
-      <Stack gap={1}>
+    <Stack my={1}>
+      <Stack gap={0.5}>
         <Typography variant="subtitle2">{label}</Typography>
         <Typography variant="h5">
           {unit} {amount}

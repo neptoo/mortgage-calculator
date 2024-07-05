@@ -10,7 +10,14 @@ const SliderSelect = ({ data, setData }) => {
         max={10000}
         defaultValue={data.homeValue}
         step={100}
-        onChange={(e, value) => setData({ homeValue: value })}
+        onChange={(e, value) =>
+          setData({
+            ...data,
+            homeValue: value,
+            downPayment: value * 0.2,
+            loanAmount: value * 0.8,
+          })
+        }
         label="房屋价值"
         amount={data.homeValue}
         value={data.homeValue}
@@ -18,35 +25,47 @@ const SliderSelect = ({ data, setData }) => {
       />
       <SliderItem
         min={0}
-        max={100}
+        max={data.homeValue}
         defaultValue={data.downPayment}
         value={data.downPayment}
-        step={10}
-        onChange={(e, value) => setData({ downPayment: value })}
+        step={100}
+        onChange={(e, value) =>
+          setData({
+            ...data,
+            downPayment: value,
+            loanAmount: data.homeValue - value,
+          })
+        }
         label="首付款"
         amount={data.downPayment}
         unit="￥"
       />
       <SliderItem
         min={0}
-        max={100}
+        max={data.homeValue}
         defaultValue={data.loanAmount}
         value={data.loanAmount}
-        step={10}
-        onChange={(e, value) => console.log(value)}
+        step={100}
+        onChange={(e, value) =>
+          setData({
+            ...data,
+            loanAmount: value,
+            downPayment: data.homeValue - value,
+          })
+        }
         label="贷款金额"
         amount={data.loanAmount}
         unit="￥"
       />
       <SliderItem
-        min={0}
-        max={100}
-        defaultValue={data.loanTerm}
-        value={data.loanTerm}
-        step={10}
-        onChange={(e, value) => console.log(value)}
+        min={2}
+        max={10}
+        defaultValue={data.interestRate}
+        value={data.interestRate}
+        step={0.5}
+        onChange={(e, value) => setData({ ...data, interestRate: value })}
         label="利息"
-        amount={data.loanTerm}
+        amount={data.interestRate}
         unit="%"
       />
     </>
