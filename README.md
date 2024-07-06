@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# 贷款计算器
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![效果图](https://s3.bmp.ovh/imgs/2024/07/06/9c81d17a24fa481a.png)
 
-## Available Scripts
+## 简介
 
-In the project directory, you can run:
+### 技术栈
 
-### `npm start`
+`React` + `Material UI`+ `react-chartjs-2`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+参考文档：
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Material UI](https://mui.com/material-ui/)
 
-### `npm test`
+[react-chartjs-2](https://react-chartjs-2-two.vercel.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 特性
 
-### `npm run build`
+- 网站主题切换（Light / Dark）
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 调整房屋价值，首付款默认值为房屋价值的20%，贷款金额默认为80%
+- 房屋价值固定，调整首付款，贷款金额默认为两者之差；反之同理
+- 本金/利息占比图表可视化
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+计算规则：
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+房屋价值 = 首付款 + 贷款金额
 
-### `npm run eject`
+贷款金额 * 利息 = 每月应付金额 * 12 * 年限
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+首付款和贷款金额的最大值，由房屋价值动态决定
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 开发运行
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm run start
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
